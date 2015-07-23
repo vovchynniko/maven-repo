@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2011 CodeGist.org
+  ~
+  ~     Licensed under the Apache License, Version 2.0 (the "License");
+  ~     you may not use this file except in compliance with the License.
+  ~     You may obtain a copy of the License at
+  ~
+  ~         http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~     Unless required by applicable law or agreed to in writing, software
+  ~     distributed under the License is distributed on an "AS IS" BASIS,
+  ~     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~     See the License for the specific language governing permissions and
+  ~     limitations under the License.
+  ~
+  ~  ===================================================================
+  ~
+  ~  More information at http://www.codegist.org.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.codegist</groupId>
+        <artifactId>codegist-parent</artifactId>
+        <version>1.0.2</version>
+        <relativePath>../</relativePath>
+    </parent>
+    <artifactId>codegist-common</artifactId>
+    <version>2.0.0-RC1</version>
+    <name>CodeGist Commons</name>
+    <packaging>jar</packaging>
+    <url>http://common.codegist.org/</url>
+
+    <description>CodeGist Commons offers a set of utility classes for common tasks, as encoding/decoding, collections,
+        I/O, marshalling/unmarshalling,
+        reflection and more.
+    </description>
+
+    <scm>
+        <url>https://github.com/codegist/common</url>
+        <connection>scm:git:git@github.com:codegist/common.git</connection>
+        <developerConnection>scm:git:git@github.com:codegist/common.git</developerConnection>
+    </scm>
+
+    <issueManagement>
+        <system>GITHUB</system>
+        <url>https://github.com/codegist/common/issues/</url>
+    </issueManagement>
+
+    <licenses>
+        <license>
+            <name>Apache Software License - Version 2.0</name>
+            <url>http://common.codegist.org/LICENSE.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <charset>UTF-8</charset>
+                    <show>public</show>
+                    <source>1.5</source>
+                    <links>
+                        <link>http://java.sun.com/webservices/docs/1.5/api/</link>
+                        <link>http://cglib.sourceforge.net/apidocs/</link>
+                        <link>${project.javadoc.javase}</link>
+                    </links>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
+
+    <dependencies>
+        <!--Declared as optional, only needed when org.codegist.common.reflect.CglibProxyFactory is used -->
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>2.2</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.6.0</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.0</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.google.android</groupId>
+            <artifactId>android</artifactId>
+            <version>2.3.3</version>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+</project>
